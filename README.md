@@ -5,6 +5,7 @@
 1. 按 `Win + X`
 2. 選擇「終端機」（Windows 11）或「Windows PowerShell」（Windows 10）
 3. 如果選單裡沒有看到，也可以按 `Win` 鍵，搜尋 `PowerShell`，再按 `Enter` 開啟
+
 接下來的 Git 指令都在這個視窗裡輸入。
  
 > **權限提醒**
