@@ -1,4 +1,27 @@
 # Git 新手指南
+
+這是一份給 Git 新手看的筆記，目標是用最少必要觀念，學會把專案放到 GitHub、更新版本、開分支和建立 Pull Request。
+
+建議照順序閱讀。
+
+## 目錄
+
+1. [Git 基本流程](README.md)  
+   從開啟 PowerShell、設定 Git、建立 repository，到第一次 `add` / `commit` / `push`。
+
+2. [Git Clone 與 .gitignore](clone-and-gitignore.md)  
+   學會把 GitHub 上的專案下載到本機，以及哪些檔案不應該上傳。
+
+3. [Commit 前的檢查流程](check-before-commit.md)  
+   使用 `git status` 和 `git diff` 檢查修改內容，避免盲目 commit。
+
+4. [Commit 訊息怎麼寫](commit-message.md)  
+   學會寫清楚的 commit message，不要只寫 `update`、`fix`、`123`。
+
+5. [Branch、PR、Merge 的基本流程](branch-and-pr.md)  
+   學會開分支、push 分支、建立 Pull Request，最後合併回 `main`。
+
+---
  
 ## 開啟 PowerShell
  
@@ -140,75 +163,14 @@ git push
 | `git add README.md index.html` | 只把 `README.md` 和 `index.html` 這兩個檔案加入暫存區 |
 | `git commit -m "..."` | 建立一筆版本紀錄，訊息要簡單描述這次改了什麼 |
 | `git push` | 把本機的 commit 上傳到 GitHub |
- 
+
 ---
- 
-## 開新 branch 的基本流程
- 
-### 1. 先確認目前狀態
-```powershell
-git status
-```
- 
-### 2. 建立並切換到新 branch
-```powershell
-git switch -c feature/login-page
-```
- 
-### 3. 修改檔案後，查看狀態
-```powershell
-git status
-```
- 
-### 4. 加入修改
-```powershell
-git add .
-```
- 
-### 5. 建立 commit
-```powershell
-git commit -m "Add login page"
-```
- 
-### 6. 推上 GitHub
-```powershell
-git push -u origin feature/login-page
-```
- 
-### 7. 到 GitHub 網頁上開 Pull Request
-1. 推上去之後，到 GitHub 網頁的 repository 頁面
-2. 會看到「Compare & pull request」按鈕，點下去
-3. 確認內容沒問題後，點「Merge pull request」完成合併
-4. 合併完成後，可以選擇刪除 `feature/login-page` 這個分支（GitHub 上會有按鈕）
-### 8. 切回 main 前，先確認目前沒有未提交的修改
-```powershell
-git status
-```
- 
-### 9. 切回 main
-```powershell
-git switch main
-```
- 
-### 10. 把 GitHub 上最新的內容（剛剛合併的）拉回本機
-```powershell
-git pull
-```
- 
-> **補充**：如果想在本機直接合併，不透過 GitHub 網頁的 PR，可以這樣做（新手建議先用上面 GitHub 網頁的方式，比較不容易出錯）：
-> ```powershell
-> git switch main
-> git merge feature/login-page
-> git push
-> ```
- 
-### 小提醒
- 
-| 指令 | 說明 |
-|---|---|
-| `git status` | 查看目前哪些檔案被修改、新增或刪除 |
-| `git switch -c <分支名稱>` | 建立並切換到新分支 |
-| `git switch <分支名稱>` | 切換到已存在的分支 |
-| `git pull` | 把遠端（GitHub）最新的內容同步到本機 |
- 
-> 合併完 PR 後，本機的 main 不會自動更新，記得要 `git pull` 一次。
+
+## 下一步
+
+如果已經會基本的 `add` / `commit` / `push`，可以繼續看：
+
+- [Git Clone 與 .gitignore](clone-and-gitignore.md)
+- [Commit 前的檢查流程](check-before-commit.md)
+- [Commit 訊息怎麼寫](commit-message.md)
+- [Branch、PR、Merge 的基本流程](branch-and-pr.md)
